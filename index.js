@@ -43,8 +43,6 @@ let promise = newPromise(data,"Vigen")
 
 promise.then(function(result) {
     console.log(result)
-}).then(function() {
-    console.log(result)
 }).catch(function(result) {
     console.log(result)
 })
