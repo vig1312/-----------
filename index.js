@@ -8,28 +8,40 @@ for(let i = 0;i < 10;i++) {
 
 let data = [
     {
-        name: "vigen",
+        name: "Vigen",
         lastName:"Vardanyan"
-    }
+    },
+    {
+        name: "Ruben",
+        lastName:"Vardanyan"
+    },
+    {
+        name: "Vigen",
+        lastName:"Vardanyan"
+    },
+    {
+        name: "Gevor",
+        lastName:"Vardanyan"
+    },
 ]
 
-function newPromise(data) {
+function newPromise(data,searchingMember) {
     return new Promise(function(resolve,reject) {
-        setTimeout(function() {
+        setInterval(function() {
             data.forEach((member,index) => {
-                if(member.name.toLowerCase().includes("Vigen")) {
+                if(member.name.toLowerCase().includes(searchingMember.toLowerCase())) {
                     resolve(`Hello ${member.name} in ${index} index`)
                 } else {
                     reject(`not found ${index} index`)
                 }
             })
-        })
+        },1000)
     })
 }
 
-let promise = newPromise(data)
+let promise = newPromise(data,"Vigen")
 
-promise.ther(function(result) {
+promise.then(function(result) {
     console.log(result)
 }).catch(function(result) {
     console.log(result)
