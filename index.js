@@ -65,3 +65,17 @@ function foundingMembers(data,searchingName) {
 }
 
 foundingMembers(data,"Vigen")
+
+let prog = document.getElementById("progress")
+let progResult = document.querySelector("#progResult")
+
+let progress = setInterval(function() {
+    prog.value += 1
+    progResult.innerHTML = prog.value
+
+    if(prog.value === "100") {
+    clearInterval(progress)
+}
+},200)
+
+
