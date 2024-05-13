@@ -92,6 +92,18 @@ fetch("https://jsonplaceholder.typicode.com/users", {
 }).then(resolve => resolve.json())
   .then(data => console.log(data))
 
+  function asyncorunusPromise() {
+    return new Promise(function(resolve,reject) {
+        setTimeout(function() {
+            resolve(8)
+        },1000)
+    })
+  }
+
+  asyncorunusPromise().then(function(result) {
+    console.log(result)
+  })
+
 
 
 
