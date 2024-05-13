@@ -78,4 +78,20 @@ let progress = setInterval(function() {
 }
 },200)
 
+fetch("https://jsonplaceholder.typicode.com/users")
+.then((response) => response.json())
+.then((data) => console.log(data))
+
+fetch("https://jsonplaceholder.typicode.com/users", {
+    method: "POST",
+    body: JSON.stringify(data),
+    headers: {
+        "Content-type": "Application/json",
+    }
+
+}).then(resolve => resolve.json())
+  .then(data => console.log(data))
+
+
+
 
