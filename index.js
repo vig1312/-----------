@@ -104,6 +104,12 @@ fetch("https://jsonplaceholder.typicode.com/users", {
     console.log(result)
   })
 
+  function numberToCommas(number) {
+    return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g,
+    ".")
+  }
 
+console.log(numberToCommas(220000000))
+ 
 
 
